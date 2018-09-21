@@ -25,10 +25,10 @@ t = Table(
 will output
 
 ```
-+--------+-------------+
-| First  | Last        |
-+--------+-------------+
-| julan  | casablancas |
-| tobias | forge       |
-+--------+-------------+
++---------+-------------+
+| First   | Last        |
++---------+-------------+
+| julian  | casablancas |
+| someone | else        |
++---------+-------------+
 ```
