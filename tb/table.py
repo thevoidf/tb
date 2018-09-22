@@ -49,8 +49,8 @@ class Table:
 	def __str__(self):
 		t = '\n'
 
+		t += '{}\n'.format(self.separator())
 		if self.header:
-			t += '{}\n'.format(self.separator())
 			for i, item in enumerate(self.header):
 				column_length = self.get_column_length(i)
 				t += str(Item(item, column_length, self.column_char))
@@ -62,7 +62,6 @@ class Table:
 				t += str(Item(item, column_length, self.column_char))
 			t += self.column_char + '\n'
 
-		if self.header:
-			t += '{}\n'.format(self.separator())
+		t += '{}\n'.format(self.separator())
 		return t
 
