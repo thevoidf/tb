@@ -36,17 +36,12 @@ class Table:
 					except:
 						self.header.append('')
 	
-	def set_header(self, header):
-		self.header = header
-	
-	def add_row(self, row):
-		self.rows.append(row)
-		self.fix_header()
-
 	def render(self):
 		print(self)
 
 	def __str__(self):
+		self.fix_header()
+
 		t = '\n'
 
 		t += '{}\n'.format(self.separator())
