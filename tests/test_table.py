@@ -7,9 +7,9 @@ from tb import Table
 
 def test_table():
 	t = Table()
-	t.set_header(['First', 'Last'])
-	t.add_row(['julian', 'casablancas'])
-	t.add_row(['someone', 'else'])
+	t.header = ['First', 'Last']
+	t.rows.append(['julian', 'casablancas'])
+	t.rows.append(['someone', 'else'])
 	assert str(t) == """
 +---------+-------------+
 | First   | Last        |
@@ -22,9 +22,9 @@ def test_table():
 
 def test_table_with_single_column():
 	t = Table()
-	t.set_header(['First'])
-	t.add_row(['julian'])
-	t.add_row(['someone'])
+	t.header = ['First']
+	t.rows.append(['julian'])
+	t.rows.append(['someone'])
 	assert str(t) == """
 +---------+
 | First   |
@@ -37,12 +37,12 @@ def test_table_with_single_column():
 
 def test_table_with_many_columns():
 	t = Table()
-	t.set_header(['First', 'Last', 'Hobby'])
-	t.add_row(['Julian', 'Casablancas', 'Music'])
-	t.add_row(['Timmy', 'Turner', 'Magic'])
-	t.add_row(['Marty', 'McFly', 'Music'])
-	t.add_row(['Emmett', 'Brown', 'Science'])
-	t.add_row(['someone', 'else', 'something'])
+	t.header = ['First', 'Last', 'Hobby']
+	t.rows.append(['Julian', 'Casablancas', 'Music'])
+	t.rows.append(['Timmy', 'Turner', 'Magic'])
+	t.rows.append(['Marty', 'McFly', 'Music'])
+	t.rows.append(['Emmett', 'Brown', 'Science'])
+	t.rows.append(['someone', 'else', 'something'])
 	assert str(t) == """
 +---------+-------------+-----------+
 | First   | Last        | Hobby     |
@@ -61,9 +61,9 @@ def test_table_with_custom_symbols():
 	t.sep_char = '='
 	t.column_char = '|'
 	t.corner_char = '*'
-	t.set_header(['First', 'Last'])
-	t.add_row(['julian', 'casablancas'])
-	t.add_row(['someone', 'else'])
+	t.header = ['First', 'Last']
+	t.rows.append(['julian', 'casablancas'])
+	t.rows.append(['someone', 'else'])
 	assert str(t) == """
 *=========*=============*
 | First   | Last        |
@@ -76,9 +76,9 @@ def test_table_with_custom_symbols():
 
 def test_table_with_missing_header():
 	t = Table()
-	t.set_header(['First'])
-	t.add_row(['julian', 'casablancas'])
-	t.add_row(['someone', 'else'])
+	t.header = ['First']
+	t.rows.append(['julian', 'casablancas'])
+	t.rows.append(['someone', 'else'])
 	assert str(t) == """
 +---------+-------------+
 | First   |             |
@@ -91,13 +91,12 @@ def test_table_with_missing_header():
 
 def test_table_with_without_header():
 	t = Table()
-	t.set_header([])
-	t.add_row(['julian', 'casablancas'])
-	t.add_row(['someone', 'else'])
+	t.header = []
+	t.rows.append(['julian', 'casablancas'])
+	t.rows.append(['someone', 'else'])
 	assert str(t) == """
 +---------+-------------+
 | julian  | casablancas |
 | someone | else        |
 +---------+-------------+
 """
-
