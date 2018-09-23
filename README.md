@@ -28,7 +28,7 @@ will output
 +---------+-------------+
 | First   | Last        |
 +---------+-------------+
-| julian  | casablancas |
-| someone | else        |
+| Julian  | Jasablancas |
+| Someone | Else        |
 +---------+-------------+
 ```
