@@ -7,17 +7,17 @@ make tables in terminal
 examples
 ```
 t = Table()
-t.set_header(['First', 'Last'])
-t.add_row(['julian', 'casablancas'])
-t.add_row(['someone', 'else'])
+t.header = ['First', 'Last']
+t.rows.append(['Julian', 'Jasablancas'])
+t.rows.append(['Someone', 'Else'])
 t.render()
 
 # or with init
 t = Table(
 	['First', 'Last'],
 	[
-		['julian', 'casablancas'],
-		['someone', 'else'],
+		['Julian', 'Casablancas'],
+		['Someone', 'Else'],
 	]
 )
 
